@@ -1,9 +1,9 @@
 [meta]
 name = "Monkey Balls"
-version = "0.1.0"
+version = "0.1.1"
 author = "AnythingGoes"
 description = "AiAi, MeeMee, Baby and GonGon from Super Monkey Ball (GameCube) running inside their balls: clear glass with a coloured lower half."
-min_host = "0.12.0"
+min_host = "0.13.1"
 dependencies = ["cosmetic-kit"]
 
 [script]

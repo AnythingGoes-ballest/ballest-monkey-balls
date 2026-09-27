@@ -25,7 +25,7 @@ Fan-made: Super Monkey Ball and its characters belong to SEGA. The models are si
 ## Install
 
 In the game: footer **plugins** > **browse** > Monkey Balls > **install** (Cosmetic Kit comes with it).
-Needs the plugin manager host 0.12.0 or newer.
+Needs the plugin manager host 0.13.1 or newer.
 
 ## Files
 
