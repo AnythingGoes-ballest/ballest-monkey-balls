@@ -1,0 +1,11 @@
+[meta]
+name = "Monkey Balls"
+version = "0.1.0"
+author = "AnythingGoes"
+description = "AiAi, MeeMee, Baby and GonGon from Super Monkey Ball (GameCube) running inside their balls: clear glass with a coloured lower half."
+min_host = "0.12.0"
+dependencies = ["cosmetic-kit"]
+
+[script]
+files = ["main.as"]
+assets = ["*.png", "models/*.txt"]

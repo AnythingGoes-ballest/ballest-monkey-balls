@@ -1,0 +1,68 @@
+# AiAi as in Super Monkey Ball (GameCube, 2001), inside his ball. The ball itself is clear glass (AddBall with no
+# image); its lower half is tinted red glass here, as on the game's box art, and rolls with the ball. The monkey faces
+# +x (the ball's radius is 50), stays upright, turns to where the ball is going and runs: arms and legs swing from
+# shoulders and hips, faster and further the faster the ball rolls.
+#
+# From the official art: dark brown fur, a peach heart-shaped face with a big muzzle and an open grin, black oval
+# eyes, spiral ears, a brown tuft, an orange shirt with a white A, a brown belly, peach hands and big peach feet.
+material tint glass #ff2418 opacity=0.28
+material fur plastic #5a3018 rough=0.35
+material skin plastic #f4b898 rough=0.4
+material shirt plastic #ff6a08 rough=0.5
+material letter plastic #ffffff rough=0.5
+material eye plastic #080808 rough=0.1
+material shine plastic #ffffff rough=0.1
+material mouth plastic #6a0c12 rough=0.5
+material tongue plastic #ff8098 rough=0.4
+
+tempo rate=0.6 run=0.25 max=5 calm=0.3 full=10
+
+group shell
+bowl tint r=49.5 wall=0.8
+
+group monkey travel
+
+group body on=monkey bob=2.5
+# head, with the face: two lobes around the eyes over a big muzzle (brown fur comes down between the lobes)
+sphere fur r=17 at=0,0,14
+sphere skin r=9 at=9.5,-4.3,16 scale=0.75,1,1.15
+sphere skin r=9 at=9.5,4.3,16 scale=0.75,1,1.15
+sphere skin r=10.5 at=10.5,0,8 scale=0.95,1.25,0.75
+sphere mouth r=6 at=18.6,0,5.5 scale=0.4,1.45,0.45
+sphere tongue r=3.8 at=19.6,0,4.6 scale=0.4,1.1,0.35
+# eyes: black ovals leaning out at the top, with a glint
+sphere eye r=3.3 at=16.2,-4.6,18 scale=0.45,0.75,1.35 rot=0,0,-12
+sphere eye r=3.3 at=16.2,4.6,18 scale=0.45,0.75,1.35 rot=0,0,12
+sphere shine r=0.9 at=17.6,-4,19.8
+sphere shine r=0.9 at=17.6,5.2,19.8
+# spiral ears, turned a little outwards
+sphere skin r=9.5 at=-1,-19.5,17 scale=0.35,1,1 rot=0,-25,0
+sphere skin r=9.5 at=-1,19.5,17 scale=0.35,1,1 rot=0,25,0
+spiral skin r=8 inner=0.8 turns=2.2 thick=2.6 at=0.8,-20.2,17 rot=90,-25,0
+spiral skin r=8 inner=0.8 turns=2.2 thick=2.6 at=0.8,20.2,17 rot=90,25,0
+# the tuft, curling back
+capsule fur r=3.6 len=6 at=1,0,28 rot=-20,0,0
+capsule fur r=3 len=4.5 at=-1.5,0,35 rot=-60,0,0
+# shirt with an A, sleeves, and the belly below it
+sphere shirt r=10.5 at=0,0,-5 scale=0.95,1.05,0.85
+sphere shirt r=4.5 at=0,-9.5,-2
+sphere shirt r=4.5 at=0,9.5,-2
+box letter size=0.8,1.2,6.5 at=10.3,-1.3,-4.5 rot=0,0,22
+box letter size=0.8,1.2,6.5 at=10.3,1.3,-4.5 rot=0,0,-22
+box letter size=0.8,3.2,1.1 at=10.3,0,-5.6
+sphere fur r=9.5 at=1.5,0,-13.5 scale=0.95,1,0.85
+ring fur r=4 thick=2 degrees=280 at=-11,0,-14 rot=0,0,90
+
+# arms and legs, each arm in step with the other side's leg
+group armL on=body pivot=0,-10,-2 swing=y angle=55 phase=180
+capsule fur r=2.6 len=8 at=0,-11,-3 rot=180,0,-12
+sphere skin r=3.6 at=0,-14,-17.5 scale=1,1,1.1
+group armR on=body pivot=0,10,-2 swing=y angle=55
+capsule fur r=2.6 len=8 at=0,11,-3 rot=180,0,12
+sphere skin r=3.6 at=0,14,-17.5 scale=1,1,1.1
+group legL on=body pivot=0,-5,-19 swing=y angle=45
+capsule fur r=3.2 len=6 at=0,-5,-19 rot=180,0,0
+sphere skin r=4.5 at=3.5,-5.5,-33.5 scale=1.8,1,0.6
+group legR on=body pivot=0,5,-19 swing=y angle=45 phase=180
+capsule fur r=3.2 len=6 at=0,5,-19 rot=180,0,0
+sphere skin r=4.5 at=3.5,5.5,-33.5 scale=1.8,1,0.6
